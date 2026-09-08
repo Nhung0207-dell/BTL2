@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Trang web: Sử dụng tag <title> -->
+    <title>Tạo form và các điều khiển trên form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .title {
+            color: #A52A2A;
+            text-align: center;
+        }
+        table {
+            border-collapse: collapse;
+            background-color: #DDF0FF;
+            border: 1px solid #7F9DB9;
+            margin: 0 auto;
+        }
+        td {
+            padding: 5px 10px;
+            border: 1px solid #7F9DB9;
+        }
+        .btn-container {
+            text-align: center;
+            background-color: #DDF0FF;
+        }
+        .result-label {
+            text-align: center;
+            color: #000080;
+            font-weight: bold;
+            min-height: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 class="title">Đăng nhập</h2>
+
+    <!-- Tạo form: Tag <form> và t.t id -->
+    <form id="formDangNhap">
+        <!-- Tạo table trong form, gồm 4 dòng 2 cột: Tag <table> -->
+        <table>
+            <!-- Dòng 1: Mã người dùng -->
+            <tr>
+                <td>Mã người dùng:</td>
+                <td>
+                    <!-- Tag <input> type="text" và id -->
+                    <input type="text" id="txtMaNguoiDung" value="ptnhung">
+                </td>
+            </tr>
+            <!-- Dòng 2: Mật khẩu -->
+            <tr>
+                <td>Mật khẩu:</td>
+                <td>
+                    <!-- Tag <input> type="password" và id -->
+                    <input type="password" id="txtMatKhau" value="12345678">
+                </td>
+            </tr>
+            <!-- Dòng 3: Nút Button -->
+            <tr>
+                <td colspan="2" class="btn-container">
+                    <!-- Tag <input> type="button", id, value và sự kiện onClick -->
+                    <input type="button" id="btnDongY" value="Đồng ý" onclick="xuatMaNguoiDung()">
+                </td>
+            </tr>
+            <!-- Dòng 4: Điều khiển nhãn xuất nội dung -->
+            <tr>
+                <td colspan="2">
+                    <!-- Điều khiển nhãn: Tag <div> và t.t id -->
+                    <div id="lblXuat" class="result-label"></div>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <!-- Xử lý chức năng nút Đồng ý -->
+    <script>
+        function xuatMaNguoiDung() {
+            // Lấy giá trị từ thuộc tính value của ô "Mã người dùng"
+            var maNguoiDung = document.getElementById("txtMaNguoiDung").value;
+            
+            // Gán nội dung vào thuộc tính innerText của nhãn <div>
+            document.getElementById("lblXuat").innerText = maNguoiDung;
+        }
+    </script>
+
+</body>
+</html>
