@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tạo form va các điều kiển trên form</title>
+	<style>
+		body {
+			form-family: Arial;
+		}
+		table {
+			border-collapse: collapse;
+			background-color: #DDF0FF;
+			border: 1px solid #7F9DB9;
+            margin: 0 auto;
+		}
+		.title{
+			text-alight: center;
+			color: #A52A2A;
+		}
+		.btn-container {
+            text-align: center;
+            background-color: #DDF0FF;
+        }
+        .result-label {
+            text-align: center;
+            color: #000080;
+            font-weight: bold;
+            min-height: 20px;
+        }
+		td {
+            padding: 5px 10px;
+            border: 1px solid #7F9DB9;
+        }
+	</style>
+</head>
+<body>
+	<h2 class="title">Đăng nhập</h2>
+	<form id="">
+		<table>
+			<tr>
+				<td>Mã người dùng:</td>
+				<td>
+					<input type="text" name="txtMaNguoiDung" value="ptnhung">
+				</td>
+			</tr>
+			<tr>
+				<td>Mật khẩu</td>
+				<td>
+					<input type="password" name="txtMatKhau" value="12345678">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="btn-container">
+					<input type="button" id="btnDongY" value="Đồng ý" onclick="xuatMaNguoiDung()">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<div id="lblXuat" class="result-label"></div>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<script>
+		function xuatMaNguoiDung(){
+			var maNguoiDung = document.getElementById("txtMaNguoiDung").value;
+			document.getElementById("lblXuat").innerText = maNguoiDung;
+		}
+	</script>
+</body>
+</html>
