@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tiêu đề cửa sổ -->
+    <title>Tạo form và các điều khiển</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .title {
+            color: #2E6B2E;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        /* Định dạng bảng giao diện mẫu */
+        table {
+            background-color: #E6F5D0;
+            border: 1px solid #2E6B2E;
+            border-collapse: collapse;
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        td {
+            border: 1px solid #82B382;
+            padding: 5px 8px;
+            color: #2E6B2E;
+        }
+
+        /* CSS các ô input và danh sách chọn */
+        input[type="text"], select {
+            border: 1px solid #7F9DB9;
+            padding: 2px;
+        }
+
+        .btn-container {
+            text-align: center;
+        }
+
+        .message-label {
+            text-align: center;
+            color: red;
+            font-weight: bold;
+            font-size: 14px;
+            min-height: 20px;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 class="title">Phiếu đăng ký tham gia chương trình khuyến mãi</h2>
+
+    <!-- Tạo form và bảng bên trong -->
+    <form id="frmDangKy">
+        <table>
+            <!-- 1. Họ và tên -->
+            <tr>
+                <td>Họ và tên</td>
+                <td><input type="text" id="txtHoTen" size="35" value="Nguyễn Ngọc Quỳnh Nga"></td>
+            </tr>
+
+            <!-- 2. Địa chỉ -->
+            <tr>
+                <td>Địa chỉ</td>
+                <td><input type="text" id="txtDiaChi" size="30" value="2Bia Hùng Vương, Q10"></td>
+            </tr>
+
+            <!-- 3. Điện thoại -->
+            <tr>
+                <td>Điện thoại</td>
+                <td><input type="text" id="txtDienThoai" size="20" value="0909097506"></td>
+            </tr>
+
+            <!-- 4. Phái (Radio button) -->
+            <tr>
+                <td>Phái</td>
+                <td>
+                    <input type="radio" name="radGioiTinh" id="nam" value="Nam"> <label for="nam">Nam</label>
+                    <input type="radio" name="radGioiTinh" id="nu" value="Nữ" checked> <label for="nu">Nữ</label>
+                </td>
+            </tr>
+
+            <!-- 5. Nghề nghiệp (Drop-down box) -->
+            <tr>
+                <td>Nghề nghiệp</td>
+                <td>
+                    <select id="cboNgheNghiep">
+                        <option value="Bác sĩ">Bác sĩ</option>
+                        <option value="Kỹ sư">Kỹ sư</option>
+                        <option value="Giáo viên" selected>Giáo viên</option>
+                        <option value="Khác">Khác</option>
+                    </select>
+                </td>
+            </tr>
+
+            <!-- 6. Chọn sản phẩm tham gia (List box chọn nhiều) -->
+            <tr>
+                <td>Chọn sản phẩm tham gia</td>
+                <td>
+                    <select id="lstSanPham" multiple size="4" style="width: 150px;">
+                        <option value="Kem đánh răng" selected>Kem đánh răng</option>
+                        <option value="Bột giặt">Bột giặt</option>
+                        <option value="Dầu gội đầu" selected>Dầu gội đầu</option>
+                        <option value="Sữa tắm">Sữa tắm</option>
+                    </select>
+                </td>
+            </tr>
+
+            <!-- 7. Số người dự đoán tham gia -->
+            <tr>
+                <td>Số người dự đoán tham gia</td>
+                <td><input type="text" id="txtDuDoan" size="15" value="250000"></td>
+            </tr>
+
+            <!-- 8. Nút Button Đồng ý -->
+            <tr>
+                <td colspan="2" class="btn-container">
+                    <input type="button" id="btnDongY" value="Đồng ý" onclick="xuLyDangKy()">
+                </td>
+            </tr>
+        </table>
+
+        <!-- Nhãn in câu thông báo -->
+        <div id="lblThongBao" class="message-label"></div>
+    </form>
+
+    <!-- Xử lý sự kiện click nút Đồng ý -->
+    <script>
+        function xuLyDangKy() {
+            // Xuất nội dung câu thông báo theo đúng yêu cầu
+            document.getElementById("lblThongBao").innerText = "Bạn đã đăng ký thành công!!!";
+        }
+    </script>
+
+</body>
+</html>
